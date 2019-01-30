@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmApiService } from '../film-api/film-api.service';
-import { FilmFavorisService } from '../film-fav-service/film-favoris.service';
+import { FilmApiService } from 'src/app/services/film-api/film-api.service';
+import { FilmFavorisService } from 'src/app/services/film-fav-service/film-favoris.service';
 
 @Component({
   selector: 'accueil-root',
