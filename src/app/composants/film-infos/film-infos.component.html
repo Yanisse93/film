@@ -1,3 +1,4 @@
-<p>
-  film-infos works!
-</p>
+<div *ngFor="let infos of getFilmInfos()">
+    <h1>{{ infos.original_title}}</h1>
+    <img src="https://image.tmdb.org/t/p/w500{{ infos.poster_path }}" height="100" width="100">
+</div>
