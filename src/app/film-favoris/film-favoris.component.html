@@ -1,0 +1,7 @@
+<div *ngFor="let donneesFilmFav of getFilmFav()[0]">
+<p>{{ donneesFilmFav.id }}</p>
+<img src="https://image.tmdb.org/t/p/w500{{ donneesFilmFav.poster_path }}" height="100" width="100">
+<button class="btn" (click)="supprimerFav(donneesFilmFav)">Supprimer des favoris</button>
+
+
+

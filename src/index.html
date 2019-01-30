@@ -1,14 +1,57 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>FilmApi</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+
+<app-root></app-root>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+  $('#carouselExample').on('slide.bs.carousel', function (e) {
+
+      alert("okkkkkk")
+      var $e = $(e.relatedTarget);
+      var idx = $e.index();
+      var itemsPerSlide = 3;
+      var totalItems = $('.carousel-item').length;
+      
+      if (idx >= totalItems-(itemsPerSlide-1)) {
+          var it = itemsPerSlide - (totalItems - idx);
+          for (var i=0; i<it; i++) {
+              // append slides to end
+              if (e.direction=="left") {
+                  $('.carousel-item').eq(i).appendTo('.carousel-inner');
+              }
+              else {
+                  $('.carousel-item').eq(0).appendTo('.carousel-inner');
+              }
+          }
+      }
+  });
+
+  /* show lightbox when clicking a thumbnail */
+      $('a.thumb').click(function(event){
+          alert("ok")
+        event.preventDefault();
+        var content = $('.modal-body');
+        content.empty();
+          var title = $(this).attr("title");
+          $('.modal-title').html(title);        
+          content.html($(this).html());
+          $(".modal-profile").modal({show:true});
+      });
+  });
+</script>
+
 </body>
 </html>

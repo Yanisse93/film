@@ -1,0 +1,7 @@
+<button class="btn" routerLink="/favoris">Favoris</button>
+
+
+<div *ngFor="let donnees of afficheFilm()[0].results">
+    <img src="https://image.tmdb.org/t/p/w500{{ donnees.poster_path }}" height="100" width="100">
+    <button class="btn" (click)="ajouteFav(donnees)">Ajouter aux favoris</button>
+</div>
